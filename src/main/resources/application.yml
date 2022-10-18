@@ -1,0 +1,97 @@
+# \u5F00\u53D1\u73AF\u5883\u914D\u7F6E
+server:
+  # \u670D\u52A1\u5668\u7684HTTP\u7AEF\u53E3\uFF0C\u9ED8\u8BA4\u4E3A8080
+  port: 8080
+  servlet:
+    # \u5E94\u7528\u7684\u8BBF\u95EE\u8DEF\u5F84
+    context-path: /
+  tomcat:
+    # tomcat\u7684URI\u7F16\u7801
+    uri-encoding: UTF-8
+    # \u8FDE\u63A5\u6570\u6EE1\u540E\u7684\u6392\u961F\u6570\uFF0C\u9ED8\u8BA4\u4E3A100
+    accept-count: 1000
+    threads:
+      # tomcat\u6700\u5927\u7EBF\u7A0B\u6570\uFF0C\u9ED8\u8BA4\u4E3A200
+      max: 800
+      # Tomcat\u542F\u52A8\u521D\u59CB\u5316\u7684\u7EBF\u7A0B\u6570\uFF0C\u9ED8\u8BA4\u503C10
+      min-spare: 100
+# \u65E5\u5FD7\u914D\u7F6E
+logging:
+  level:
+    com.ruoyi: debug
+    org.springframework: warn
+
+# \u7528\u6237\u914D\u7F6E
+user:
+  password:
+    # \u5BC6\u7801\u6700\u5927\u9519\u8BEF\u6B21\u6570
+    maxRetryCount: 5
+    # \u5BC6\u7801\u9501\u5B9A\u65F6\u95F4\uFF08\u9ED8\u8BA410\u5206\u949F\uFF09
+    lockTime: 10
+
+# Spring\u914D\u7F6E
+spring:
+  # \u8D44\u6E90\u4FE1\u606F
+  messages:
+    # \u56FD\u9645\u5316\u8D44\u6E90\u6587\u4EF6\u8DEF\u5F84
+    basename: i18n/messages
+  profiles:
+    active: druid
+  # \u6587\u4EF6\u4E0A\u4F20
+  servlet:
+    multipart:
+      # \u5355\u4E2A\u6587\u4EF6\u5927\u5C0F
+      max-file-size:  10MB
+      # \u8BBE\u7F6E\u603B\u4E0A\u4F20\u7684\u6587\u4EF6\u5927\u5C0F
+      max-request-size:  20MB
+  # \u670D\u52A1\u6A21\u5757
+  devtools:
+    restart:
+      # \u70ED\u90E8\u7F72\u5F00\u5173
+      enabled: true
+  # redis \u914D\u7F6E
+  redis:
+    # \u5730\u5740
+    host: 101.34.116.84
+    # \u7AEF\u53E3\uFF0C\u9ED8\u8BA4\u4E3A6379
+    port: 6379
+    # \u6570\u636E\u5E93\u7D22\u5F15
+    database: 0
+    # \u5BC6\u7801
+    password: LIANG610125..
+    # \u8FDE\u63A5\u8D85\u65F6\u65F6\u95F4
+    timeout: 10s
+    lettuce:
+      pool:
+        # \u8FDE\u63A5\u6C60\u4E2D\u7684\u6700\u5C0F\u7A7A\u95F2\u8FDE\u63A5
+        min-idle: 0
+        # \u8FDE\u63A5\u6C60\u4E2D\u7684\u6700\u5927\u7A7A\u95F2\u8FDE\u63A5
+        max-idle: 8
+        # \u8FDE\u63A5\u6C60\u7684\u6700\u5927\u6570\u636E\u5E93\u8FDE\u63A5\u6570
+        max-active: 8
+        # #\u8FDE\u63A5\u6C60\u6700\u5927\u963B\u585E\u7B49\u5F85\u65F6\u95F4\uFF08\u4F7F\u7528\u8D1F\u503C\u8868\u793A\u6CA1\u6709\u9650\u5236\uFF09
+        max-wait: -1ms
+
+# token\u914D\u7F6E
+token:
+  # \u4EE4\u724C\u81EA\u5B9A\u4E49\u6807\u8BC6
+  header: Authorization
+  # \u4EE4\u724C\u5BC6\u94A5
+  secret: abcdefghijklmnopqrstuvwxyz
+  # \u4EE4\u724C\u6709\u6548\u671F\uFF08\u9ED8\u8BA430\u5206\u949F\uFF09
+  expireTime: 30
+
+# MyBatis\u914D\u7F6E
+mybatis:
+  # \u641C\u7D22\u6307\u5B9A\u5305\u522B\u540D
+  typeAliasesPackage: com.ruoyi.**.domain
+  # \u914D\u7F6Emapper\u7684\u626B\u63CF\uFF0C\u627E\u5230\u6240\u6709\u7684mapper.xml\u6620\u5C04\u6587\u4EF6
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+  # \u52A0\u8F7D\u5168\u5C40\u7684\u914D\u7F6E\u6587\u4EF6
+  configLocation: classpath:mybatis/mybatis-config.xml
+
+# PageHelper\u5206\u9875\u63D2\u4EF6
+pagehelper:
+  helperDialect: mysql
+  supportMethodsArguments: true
+  params: count=countSql
