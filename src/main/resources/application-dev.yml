@@ -1,21 +1,18 @@
 # 数据源配置
 spring:
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driverClassName: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://101.34.116.84:3309/ruoyi?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: 328687
     druid:
-      # 主库数据源
-      master:
-        url: jdbc:mysql://101.34.116.84:3309/ruoyi?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-        username: root
-        password: 328687
-      # 从库数据源
-      slave:
-        # 从数据源开关/默认关闭
-        enabled: false
-        url:
-        username:
-        password:
+      #      # 从库数据源
+      #      slave:
+      #        # 从数据源开关/默认关闭
+      #        enabled: false
+      #        url:
+      #        username:
+      #        password:
       # 初始连接数
       initialSize: 5
       # 最小连接池数量
