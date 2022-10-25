@@ -1,6 +1,9 @@
 package com.ljy.logindemo.service;
 
 import com.ljy.logindemo.pojo.vo.LoginUser;
+import com.ljy.logindemo.pojo.vo.SysUserVo;
+
+import java.util.List;
 
 /**
  * @author liangjy
@@ -9,4 +12,6 @@ import com.ljy.logindemo.pojo.vo.LoginUser;
  */
 public interface SysUserService {
     String login(LoginUser loginUser);
+
+    List<SysUserVo> findUserList(SysUserVo sysUserVo);
 }

@@ -1,8 +1,10 @@
 package com.ljy.logindemo.pojo.po;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 /**
@@ -28,7 +30,7 @@ public class SysUserDetails implements UserDetails {
                 .filter(permission -> permission.getValue()!=null)
                 .map(permission ->new SimpleGrantedAuthority(permission.getValue()))
                 .collect(Collectors.toList());*/
-        return null;
+        return Arrays.asList(new SimpleGrantedAuthority("TEST"));
     }
 
     @Override
