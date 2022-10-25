@@ -18,7 +18,7 @@ server:
 # \u65E5\u5FD7\u914D\u7F6E
 logging:
   level:
-    com.ruoyi: debug
+    com.ljy: debug
     org.springframework: warn
 
 # \u7528\u6237\u914D\u7F6E
@@ -51,26 +51,22 @@ spring:
       enabled: true
   # redis \u914D\u7F6E
   redis:
-    # \u5730\u5740
     host: 101.34.116.84
-    # \u7AEF\u53E3\uFF0C\u9ED8\u8BA4\u4E3A6379
-    port: 6379
-    # \u6570\u636E\u5E93\u7D22\u5F15
-    database: 0
-    # \u5BC6\u7801
     password: LIANG610125..
-    # \u8FDE\u63A5\u8D85\u65F6\u65F6\u95F4
+    port: 6379
+    database: 0
     timeout: 10s
-    lettuce:
-      pool:
-        # \u8FDE\u63A5\u6C60\u4E2D\u7684\u6700\u5C0F\u7A7A\u95F2\u8FDE\u63A5
-        min-idle: 0
-        # \u8FDE\u63A5\u6C60\u4E2D\u7684\u6700\u5927\u7A7A\u95F2\u8FDE\u63A5
-        max-idle: 8
-        # \u8FDE\u63A5\u6C60\u7684\u6700\u5927\u6570\u636E\u5E93\u8FDE\u63A5\u6570
-        max-active: 8
-        # #\u8FDE\u63A5\u6C60\u6700\u5927\u963B\u585E\u7B49\u5F85\u65F6\u95F4\uFF08\u4F7F\u7528\u8D1F\u503C\u8868\u793A\u6CA1\u6709\u9650\u5236\uFF09
-        max-wait: -1ms
+
+#    lettuce:
+#      pool:
+#        # \u8FDE\u63A5\u6C60\u4E2D\u7684\u6700\u5C0F\u7A7A\u95F2\u8FDE\u63A5
+#        min-idle: 0
+#        # \u8FDE\u63A5\u6C60\u4E2D\u7684\u6700\u5927\u7A7A\u95F2\u8FDE\u63A5
+#        max-idle: 8
+#        # \u8FDE\u63A5\u6C60\u7684\u6700\u5927\u6570\u636E\u5E93\u8FDE\u63A5\u6570
+#        max-active: 8
+#        # #\u8FDE\u63A5\u6C60\u6700\u5927\u963B\u585E\u7B49\u5F85\u65F6\u95F4\uFF08\u4F7F\u7528\u8D1F\u503C\u8868\u793A\u6CA1\u6709\u9650\u5236\uFF09
+#        max-wait: -1ms
 
 # token\u914D\u7F6E
 token:
@@ -80,7 +76,7 @@ token:
   # \u4EE4\u724C\u5BC6\u94A5
   secret: abcdefghijklmnopqrstuvwxyz
   # \u4EE4\u724C\u6709\u6548\u671F\uFF08\u9ED8\u8BA430\u5206\u949F\uFF09
-  expireTime: 30
+  expireTime: 1800
 
 # MyBatis\u914D\u7F6E
 mybatis:
