@@ -1,6 +1,8 @@
 package com.ljy.logindemo.pojo.vo;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.With;
 
 import java.util.Date;
 
@@ -9,6 +11,8 @@ import java.util.Date;
  * @Description TODO
  * @createTime 2022/10/18
  */
+@With
+@Builder
 @Data
 public class SysUserVo {
     private Long userId;

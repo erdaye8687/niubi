@@ -1,5 +1,6 @@
 package com.ljy.logindemo.pojo.vo;
 
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,6 +13,7 @@ import java.util.Collection;
  * @Description TODO
  * @createTime 2022/10/18
  */
+@Builder
 @Data
 public class LoginUser {
 
